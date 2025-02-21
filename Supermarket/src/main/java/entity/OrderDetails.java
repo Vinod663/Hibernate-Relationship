@@ -17,14 +17,18 @@ public class OrderDetails {
     private int id;*/
     @EmbeddedId
     private OrderDetailsId id;
+    /*@EmbeddedId private OrderDetailsId id;
+
+    The OrderDetails table has a composite key (OrderDetailsId), meaning its ID is made up of multiple values.
+    this would include both orderId and itemId.*/
 
     @ManyToOne
-    @MapsId("orderId")
-    @JoinColumn(name="order_id")
+    @MapsId("orderId")//Instead of creating a separate orderId field, it reuses the orderId inside OrderDetailsId.
+    @JoinColumn(name="order_id")//@JoinColumn → Defines a foreign key column.
     private Order order;
 
     @ManyToOne
-    @MapsId("itemId")
+    @MapsId("itemId")////Instead of creating a separate itemId field, it reuses the itemId inside OrderDetailsId.
     @JoinColumn(name = "item_id")
     private Item item;
 
@@ -32,4 +36,7 @@ public class OrderDetails {
 
     @Column(name = "unit_price", precision = 10, scale = 2)
     private BigDecimal unitPrice;
+    /*12345678.99 ✅
+    9999999999.99 ❌ (too many digits)
+    1234.567 ❌ (too many decimal places)*/
 }

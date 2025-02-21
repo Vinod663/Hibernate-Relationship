@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "item")
 public class Item {
     @Id
-    @Column(name = "customer_id")
+    @Column(name = "item_id")
     private String id;
 
     @Column(length = 100)

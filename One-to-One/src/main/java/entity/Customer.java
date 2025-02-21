@@ -21,6 +21,6 @@ public class Customer {
     private String name;
 
     @OneToOne
-    @JoinColumn(name = "nic_number")
-    private IDCard idCard;
+    @JoinColumn(name = "nic_number") //@JoinColumn → Defines a foreign key column.
+    private IDCard idCard;// idCard eka tama foreign key eka widihata ganne eke name eka joinColumn eken customize karanawa
 }

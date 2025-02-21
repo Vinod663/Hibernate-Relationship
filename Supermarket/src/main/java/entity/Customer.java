@@ -16,7 +16,7 @@ import java.util.List;
 //Inverse side (Customer-order)
 public class Customer {
     @Id
-    @Column(name = "customer_id")
+    @Column(name = "customer_id")//@Column → Maps a field to a database column.
     private String id;
 
     private String name;

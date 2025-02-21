@@ -24,7 +24,7 @@ public class Order {
 
     @ManyToOne
     //foreign key ekk genna ganna nisa column kiyana eka use karanna ba
-    @JoinColumn(name = "cus_id")
+    @JoinColumn(name = "cus_id")//@JoinColumn → Defines a foreign key column.
     private Customer customer;
 
     @OneToMany(mappedBy = "order")
