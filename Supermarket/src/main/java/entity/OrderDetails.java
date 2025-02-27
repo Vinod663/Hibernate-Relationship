@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 public class OrderDetails {
     /*@Id
     private int id;*/
-    @EmbeddedId
+    @EmbeddedId//composite id
     private OrderDetailsId id;
     /*@EmbeddedId private OrderDetailsId id;
 
